@@ -1,0 +1,1329 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x64</Platform>
+    <ProjectGuid>{134AEE11-FD11-42BD-B70D-7ADECF14BE21}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>ExileAgent</RootNamespace>
+    <AssemblyName>ExileAgent</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60DC8134-EBA5-43B8-BCC9-BB4BC16C2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+    <StartupObject>ns17.Class121</StartupObject>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x64' ">
+    <PlatformTarget>x64</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x64' ">
+    <PlatformTarget>x64</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Emgu.CV.World">
+      <HintPath>..\Emgu.CV.World.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp">
+      <HintPath>..\..\Program Files\dotnet\shared\Microsoft.NETCore.App\3.1.32\Microsoft.CSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualBasic">
+      <HintPath>..\..\Program Files\dotnet\shared\Microsoft.NETCore.App\3.1.32\Microsoft.VisualBasic.dll</HintPath>
+    </Reference>
+    <Reference Include="netstandard">
+      <HintPath>..\..\Program Files\dotnet\shared\Microsoft.NETCore.App\3.1.32\netstandard.dll</HintPath>
+    </Reference>
+    <Reference Include="System">
+      <HintPath>..\..\Program Files\dotnet\shared\Microsoft.NETCore.App\3.1.32\System.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Core">
+      <HintPath>..\..\Program Files\dotnet\shared\Microsoft.NETCore.App\3.1.32\System.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data">
+      <HintPath>..\..\Program Files\dotnet\shared\Microsoft.NETCore.App\3.1.32\System.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Design">
+      <HintPath>..\..\Program Files\dotnet\shared\Microsoft.WindowsDesktop.App\3.1.32\System.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="System.DirectoryServices.AccountManagement">
+      <HintPath>..\System.DirectoryServices.AccountManagement.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Drawing">
+      <HintPath>..\..\Program Files\dotnet\shared\Microsoft.WindowsDesktop.App\3.1.32\System.Drawing.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Management" />
+    <Reference Include="System.Net.Http">
+      <HintPath>..\..\Program Files\dotnet\shared\Microsoft.NETCore.App\3.1.32\System.Net.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Numerics">
+      <HintPath>..\..\Program Files\dotnet\shared\Microsoft.NETCore.App\3.1.32\System.Numerics.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Numerics.Vectors">
+      <HintPath>..\..\Program Files\dotnet\shared\Microsoft.NETCore.App\3.1.32\System.Numerics.Vectors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe">
+      <HintPath>..\..\Program Files\dotnet\shared\Microsoft.NETCore.App\3.1.32\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization">
+      <HintPath>..\..\Program Files\dotnet\shared\Microsoft.NETCore.App\3.1.32\System.Runtime.Serialization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ServiceProcess">
+      <HintPath>..\..\Program Files\dotnet\shared\Microsoft.NETCore.App\3.1.32\System.ServiceProcess.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web">
+      <HintPath>..\..\Program Files\dotnet\shared\Microsoft.NETCore.App\3.1.32\System.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Windows.Forms">
+      <HintPath>..\..\Program Files\dotnet\shared\Microsoft.WindowsDesktop.App\3.1.32\System.Windows.Forms.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml">
+      <HintPath>..\..\Program Files\dotnet\shared\Microsoft.NETCore.App\3.1.32\System.Xml.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq">
+      <HintPath>..\..\Program Files\dotnet\shared\Microsoft.NETCore.App\3.1.32\System.Xml.Linq.dll</HintPath>
+    </Reference>
+    <Reference Include="WindowsBase">
+      <HintPath>..\..\Program Files\dotnet\shared\Microsoft.WindowsDesktop.App\3.1.32\WindowsBase.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BrightIdeasSoftware\AbstractDecoration.cs" />
+    <Compile Include="BrightIdeasSoftware\AbstractDragSource.cs" />
+    <Compile Include="BrightIdeasSoftware\AbstractDropSink.cs" />
+    <Compile Include="BrightIdeasSoftware\AbstractListFilter.cs" />
+    <Compile Include="BrightIdeasSoftware\AbstractModelFilter.cs" />
+    <Compile Include="BrightIdeasSoftware\AbstractOverlay.cs" />
+    <Compile Include="BrightIdeasSoftware\AbstractRenderer.cs" />
+    <Compile Include="BrightIdeasSoftware\AbstractVirtualGroups.cs" />
+    <Compile Include="BrightIdeasSoftware\AbstractVirtualListDataSource.cs" />
+    <Compile Include="BrightIdeasSoftware\AfterSearchingEventArgs.cs" />
+    <Compile Include="BrightIdeasSoftware\AfterSortingEventArgs.cs" />
+    <Compile Include="BrightIdeasSoftware\AspectGetterDelegate.cs" />
+    <Compile Include="BrightIdeasSoftware\AspectPutterDelegate.cs" />
+    <Compile Include="BrightIdeasSoftware\AspectToStringConverterDelegate.cs" />
+    <Compile Include="BrightIdeasSoftware\AutoCompleteCellEditor.cs" />
+    <Compile Include="BrightIdeasSoftware\BarRenderer.cs" />
+    <Compile Include="BrightIdeasSoftware\BaseRenderer.cs" />
+    <Compile Include="BrightIdeasSoftware\BeforeSearchingEventArgs.cs" />
+    <Compile Include="BrightIdeasSoftware\BeforeSortingEventArgs.cs" />
+    <Compile Include="BrightIdeasSoftware\BillboardOverlay.cs" />
+    <Compile Include="BrightIdeasSoftware\BooleanCellEditor.cs" />
+    <Compile Include="BrightIdeasSoftware\BooleanCellEditor2.cs" />
+    <Compile Include="BrightIdeasSoftware\BooleanCheckStateGetterDelegate.cs" />
+    <Compile Include="BrightIdeasSoftware\BooleanCheckStatePutterDelegate.cs" />
+    <Compile Include="BrightIdeasSoftware\BorderDecoration.cs" />
+    <Compile Include="BrightIdeasSoftware\CancellableEventArgs.cs" />
+    <Compile Include="BrightIdeasSoftware\CellBorderDecoration.cs" />
+    <Compile Include="BrightIdeasSoftware\CellClickEventArgs.cs" />
+    <Compile Include="BrightIdeasSoftware\CellEditAtEdgeBehaviour.cs" />
+    <Compile Include="BrightIdeasSoftware\CellEditCharacterBehaviour.cs" />
+    <Compile Include="BrightIdeasSoftware\CellEditEventArgs.cs" />
+    <Compile Include="BrightIdeasSoftware\CellEditEventHandler.cs" />
+    <Compile Include="BrightIdeasSoftware\CellEditKeyEngine.cs" />
+    <Compile Include="BrightIdeasSoftware\CellEventArgs.cs" />
+    <Compile Include="BrightIdeasSoftware\CellOverEventArgs.cs" />
+    <Compile Include="BrightIdeasSoftware\CellRightClickEventArgs.cs" />
+    <Compile Include="BrightIdeasSoftware\CellStyle.cs" />
+    <Compile Include="BrightIdeasSoftware\CellToolTipGetterDelegate.cs" />
+    <Compile Include="BrightIdeasSoftware\CheckStateGetterDelegate.cs" />
+    <Compile Include="BrightIdeasSoftware\CheckStatePutterDelegate.cs" />
+    <Compile Include="BrightIdeasSoftware\CheckStateRenderer.cs" />
+    <Compile Include="BrightIdeasSoftware\Cluster.cs" />
+    <Compile Include="BrightIdeasSoftware\ClusteringStrategy.cs" />
+    <Compile Include="BrightIdeasSoftware\ClustersFromGroupsStrategy.cs" />
+    <Compile Include="BrightIdeasSoftware\ColumnComparer.cs" />
+    <Compile Include="BrightIdeasSoftware\ColumnRightClickEventHandler.cs" />
+    <Compile Include="BrightIdeasSoftware\ColumnSelectionForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BrightIdeasSoftware\ColumnSelectionForm.Designer.cs">
+      <DependentUpon>ColumnSelectionForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BrightIdeasSoftware\ComboBoxItem.cs" />
+    <Compile Include="BrightIdeasSoftware\CompositeAllFilter.cs" />
+    <Compile Include="BrightIdeasSoftware\CompositeAnyFilter.cs" />
+    <Compile Include="BrightIdeasSoftware\CompositeFilter.cs" />
+    <Compile Include="BrightIdeasSoftware\CreateGroupsEventArgs.cs" />
+    <Compile Include="BrightIdeasSoftware\DataListView.cs" />
+    <Compile Include="BrightIdeasSoftware\DataSourceAdapter.cs" />
+    <Compile Include="BrightIdeasSoftware\DataTreeListView.cs" />
+    <Compile Include="BrightIdeasSoftware\DateTimeClusteringStrategy.cs" />
+    <Compile Include="BrightIdeasSoftware\DateTimePortion.cs" />
+    <Compile Include="BrightIdeasSoftware\DescribedTaskRenderer.cs" />
+    <Compile Include="BrightIdeasSoftware\Design\ObjectListViewDesigner.cs" />
+    <Compile Include="BrightIdeasSoftware\Design\OLVColumnCollectionEditor.cs" />
+    <Compile Include="BrightIdeasSoftware\Design\OverlayConverter.cs" />
+    <Compile Include="BrightIdeasSoftware\DropTargetLocation.cs" />
+    <Compile Include="BrightIdeasSoftware\EditingCellBorderDecoration.cs" />
+    <Compile Include="BrightIdeasSoftware\EditorCreatorDelegate.cs" />
+    <Compile Include="BrightIdeasSoftware\EditorRegistry.cs" />
+    <Compile Include="BrightIdeasSoftware\EnumCellEditor.cs" />
+    <Compile Include="BrightIdeasSoftware\FastDataListView.cs" />
+    <Compile Include="BrightIdeasSoftware\FastListGroupingStrategy.cs" />
+    <Compile Include="BrightIdeasSoftware\FastObjectListDataSource.cs" />
+    <Compile Include="BrightIdeasSoftware\FastObjectListView.cs" />
+    <Compile Include="BrightIdeasSoftware\FilterEventArgs.cs" />
+    <Compile Include="BrightIdeasSoftware\FilterMenuBuilder.cs" />
+    <Compile Include="BrightIdeasSoftware\FlagBitSetFilter.cs" />
+    <Compile Include="BrightIdeasSoftware\FlagClusteringStrategy.cs" />
+    <Compile Include="BrightIdeasSoftware\FlagRenderer.cs" />
+    <Compile Include="BrightIdeasSoftware\FloatCellEditor.cs" />
+    <Compile Include="BrightIdeasSoftware\FormatCellEventArgs.cs" />
+    <Compile Include="BrightIdeasSoftware\FormatRowEventArgs.cs" />
+    <Compile Include="BrightIdeasSoftware\FreezeEventArgs.cs" />
+    <Compile Include="BrightIdeasSoftware\Generator.cs" />
+    <Compile Include="BrightIdeasSoftware\GlassPanelForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BrightIdeasSoftware\GlassPanelForm.Designer.cs">
+      <DependentUpon>GlassPanelForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BrightIdeasSoftware\GraphicAdornment.cs" />
+    <Compile Include="BrightIdeasSoftware\GroupExpandingCollapsingEventArgs.cs" />
+    <Compile Include="BrightIdeasSoftware\GroupFormatterDelegate.cs" />
+    <Compile Include="BrightIdeasSoftware\GroupingParameters.cs" />
+    <Compile Include="BrightIdeasSoftware\GroupKeyGetterDelegate.cs" />
+    <Compile Include="BrightIdeasSoftware\GroupKeyToTitleConverterDelegate.cs" />
+    <Compile Include="BrightIdeasSoftware\GroupMask.cs" />
+    <Compile Include="BrightIdeasSoftware\GroupMetricsMask.cs" />
+    <Compile Include="BrightIdeasSoftware\GroupState.cs" />
+    <Compile Include="BrightIdeasSoftware\GroupStateChangedEventArgs.cs" />
+    <Compile Include="BrightIdeasSoftware\GroupTaskClickedEventArgs.cs" />
+    <Compile Include="BrightIdeasSoftware\HeaderControl.cs" />
+    <Compile Include="BrightIdeasSoftware\HeaderDrawingDelegate.cs" />
+    <Compile Include="BrightIdeasSoftware\HeaderFormatStyle.cs" />
+    <Compile Include="BrightIdeasSoftware\HeaderStateStyle.cs" />
+    <Compile Include="BrightIdeasSoftware\HeaderToolTipGetterDelegate.cs" />
+    <Compile Include="BrightIdeasSoftware\HighlightTextRenderer.cs" />
+    <Compile Include="BrightIdeasSoftware\HitTestLocation.cs" />
+    <Compile Include="BrightIdeasSoftware\HitTestLocationEx.cs" />
+    <Compile Include="BrightIdeasSoftware\HotItemChangedEventArgs.cs" />
+    <Compile Include="BrightIdeasSoftware\HotItemStyle.cs" />
+    <Compile Include="BrightIdeasSoftware\HyperlinkClickedEventArgs.cs" />
+    <Compile Include="BrightIdeasSoftware\HyperlinkEventArgs.cs" />
+    <Compile Include="BrightIdeasSoftware\HyperlinkStyle.cs" />
+    <Compile Include="BrightIdeasSoftware\ICluster.cs" />
+    <Compile Include="BrightIdeasSoftware\IClusteringStrategy.cs" />
+    <Compile Include="BrightIdeasSoftware\IDecoration.cs" />
+    <Compile Include="BrightIdeasSoftware\IDragSource.cs" />
+    <Compile Include="BrightIdeasSoftware\IDropSink.cs" />
+    <Compile Include="BrightIdeasSoftware\IFilterableDataSource.cs" />
+    <Compile Include="BrightIdeasSoftware\IGenerator.cs" />
+    <Compile Include="BrightIdeasSoftware\IItemStyle.cs" />
+    <Compile Include="BrightIdeasSoftware\IListFilter.cs" />
+    <Compile Include="BrightIdeasSoftware\ImageAdornment.cs" />
+    <Compile Include="BrightIdeasSoftware\ImageDecoration.cs" />
+    <Compile Include="BrightIdeasSoftware\ImageGetterDelegate.cs" />
+    <Compile Include="BrightIdeasSoftware\ImageOverlay.cs" />
+    <Compile Include="BrightIdeasSoftware\ImageRenderer.cs" />
+    <Compile Include="BrightIdeasSoftware\ImagesRenderer.cs" />
+    <Compile Include="BrightIdeasSoftware\IModelFilter.cs" />
+    <Compile Include="BrightIdeasSoftware\IntUpDown.cs" />
+    <Compile Include="BrightIdeasSoftware\IOverlay.cs" />
+    <Compile Include="BrightIdeasSoftware\IOwnerDataCallback.cs" />
+    <Compile Include="BrightIdeasSoftware\IRenderer.cs" />
+    <Compile Include="BrightIdeasSoftware\IsHyperlinkEventArgs.cs" />
+    <Compile Include="BrightIdeasSoftware\ItemsAddingEventArgs.cs" />
+    <Compile Include="BrightIdeasSoftware\ItemsChangedEventArgs.cs" />
+    <Compile Include="BrightIdeasSoftware\ItemsChangingEventArgs.cs" />
+    <Compile Include="BrightIdeasSoftware\ItemsRemovingEventArgs.cs" />
+    <Compile Include="BrightIdeasSoftware\ITransparentOverlay.cs" />
+    <Compile Include="BrightIdeasSoftware\IVirtualGroups.cs" />
+    <Compile Include="BrightIdeasSoftware\IVirtualListDataSource.cs" />
+    <Compile Include="BrightIdeasSoftware\LightBoxDecoration.cs" />
+    <Compile Include="BrightIdeasSoftware\ListFilter.cs" />
+    <Compile Include="BrightIdeasSoftware\MappedImageRenderer.cs" />
+    <Compile Include="BrightIdeasSoftware\ModelDropEventArgs.cs" />
+    <Compile Include="BrightIdeasSoftware\ModelFilter.cs" />
+    <Compile Include="BrightIdeasSoftware\ModelObjectComparer.cs" />
+    <Compile Include="BrightIdeasSoftware\MultiImageRenderer.cs" />
+    <Compile Include="BrightIdeasSoftware\Munger.cs" />
+    <Compile Include="BrightIdeasSoftware\MungerException.cs" />
+    <Compile Include="BrightIdeasSoftware\NativeMethods.cs" />
+    <Compile Include="BrightIdeasSoftware\NullableDictionary.cs" />
+    <Compile Include="BrightIdeasSoftware\ObjectListView.cs" />
+    <Compile Include="BrightIdeasSoftware\OLVChildrenAttribute.cs" />
+    <Compile Include="BrightIdeasSoftware\OLVColumn.cs" />
+    <Compile Include="BrightIdeasSoftware\OLVColumnAttribute.cs" />
+    <Compile Include="BrightIdeasSoftware\OLVDataObject.cs" />
+    <Compile Include="BrightIdeasSoftware\OlvDropEventArgs.cs" />
+    <Compile Include="BrightIdeasSoftware\OLVExporter.cs" />
+    <Compile Include="BrightIdeasSoftware\OLVGroup.cs" />
+    <Compile Include="BrightIdeasSoftware\OLVGroupComparer.cs" />
+    <Compile Include="BrightIdeasSoftware\OLVIgnoreAttribute.cs" />
+    <Compile Include="BrightIdeasSoftware\OLVListItem.cs" />
+    <Compile Include="BrightIdeasSoftware\OLVListSubItem.cs" />
+    <Compile Include="BrightIdeasSoftware\OlvListViewHitTestInfo.cs" />
+    <Compile Include="BrightIdeasSoftware\OneOfFilter.cs" />
+    <Compile Include="BrightIdeasSoftware\OwnerDataCallbackImpl.cs" />
+    <Compile Include="BrightIdeasSoftware\Properties\Resources.cs" />
+    <Compile Include="BrightIdeasSoftware\RearrangingDropSink.cs" />
+    <Compile Include="BrightIdeasSoftware\RenderDelegate.cs" />
+    <Compile Include="BrightIdeasSoftware\RowBorderDecoration.cs" />
+    <Compile Include="BrightIdeasSoftware\RowFormatterDelegate.cs" />
+    <Compile Include="BrightIdeasSoftware\RowGetterDelegate.cs" />
+    <Compile Include="BrightIdeasSoftware\SimpleDragSource.cs" />
+    <Compile Include="BrightIdeasSoftware\SimpleDropSink.cs" />
+    <Compile Include="BrightIdeasSoftware\SimpleMunger.cs" />
+    <Compile Include="BrightIdeasSoftware\SortDelegate.cs" />
+    <Compile Include="BrightIdeasSoftware\SubItemCheckingEventArgs.cs" />
+    <Compile Include="BrightIdeasSoftware\TailFilter.cs" />
+    <Compile Include="BrightIdeasSoftware\TextAdornment.cs" />
+    <Compile Include="BrightIdeasSoftware\TextDecoration.cs" />
+    <Compile Include="BrightIdeasSoftware\TextMatchFilter.cs" />
+    <Compile Include="BrightIdeasSoftware\TextOverlay.cs" />
+    <Compile Include="BrightIdeasSoftware\TintedColumnDecoration.cs" />
+    <Compile Include="BrightIdeasSoftware\ToolStripCheckedListBox.cs" />
+    <Compile Include="BrightIdeasSoftware\ToolTipControl.cs" />
+    <Compile Include="BrightIdeasSoftware\ToolTipShowingEventArgs.cs" />
+    <Compile Include="BrightIdeasSoftware\TreeBranchCollapsedEventArgs.cs" />
+    <Compile Include="BrightIdeasSoftware\TreeBranchCollapsingEventArgs.cs" />
+    <Compile Include="BrightIdeasSoftware\TreeBranchExpandedEventArgs.cs" />
+    <Compile Include="BrightIdeasSoftware\TreeBranchExpandingEventArgs.cs" />
+    <Compile Include="BrightIdeasSoftware\TreeDataSourceAdapter.cs" />
+    <Compile Include="BrightIdeasSoftware\TreeListView.cs" />
+    <Compile Include="BrightIdeasSoftware\TypedColumn.cs" />
+    <Compile Include="BrightIdeasSoftware\TypedObjectListView.cs" />
+    <Compile Include="BrightIdeasSoftware\UintUpDown.cs" />
+    <Compile Include="BrightIdeasSoftware\Version1Renderer.cs" />
+    <Compile Include="BrightIdeasSoftware\VirtualListVersion1DataSource.cs" />
+    <Compile Include="BrightIdeasSoftware\VirtualObjectListView.cs" />
+    <Compile Include="FxResources\System\Buffers\SR.cs" />
+    <Compile Include="FxResources\System\Memory\SR.cs" />
+    <Compile Include="HtmlAgilityPack\AttributeValueQuote.cs" />
+    <Compile Include="HtmlAgilityPack\Crc32.cs" />
+    <Compile Include="HtmlAgilityPack\EncodingFoundException.cs" />
+    <Compile Include="HtmlAgilityPack\HasXPathAttribute.cs" />
+    <Compile Include="HtmlAgilityPack\HtmlAttribute.cs" />
+    <Compile Include="HtmlAgilityPack\HtmlAttributeCollection.cs" />
+    <Compile Include="HtmlAgilityPack\HtmlCmdLine.cs" />
+    <Compile Include="HtmlAgilityPack\HtmlCommentNode.cs" />
+    <Compile Include="HtmlAgilityPack\HtmlConsoleListener.cs" />
+    <Compile Include="HtmlAgilityPack\HtmlDocument.cs" />
+    <Compile Include="HtmlAgilityPack\HtmlElementFlag.cs" />
+    <Compile Include="HtmlAgilityPack\HtmlEntity.cs" />
+    <Compile Include="HtmlAgilityPack\HtmlNameTable.cs" />
+    <Compile Include="HtmlAgilityPack\HtmlNode.cs" />
+    <Compile Include="HtmlAgilityPack\HtmlNodeCollection.cs" />
+    <Compile Include="HtmlAgilityPack\HtmlNodeNavigator.cs" />
+    <Compile Include="HtmlAgilityPack\HtmlNodeType.cs" />
+    <Compile Include="HtmlAgilityPack\HtmlParseError.cs" />
+    <Compile Include="HtmlAgilityPack\HtmlParseErrorCode.cs" />
+    <Compile Include="HtmlAgilityPack\HtmlTextNode.cs" />
+    <Compile Include="HtmlAgilityPack\HtmlWeb.cs" />
+    <Compile Include="HtmlAgilityPack\HtmlWebException.cs" />
+    <Compile Include="HtmlAgilityPack\IOLibrary.cs" />
+    <Compile Include="HtmlAgilityPack\MimeTypeMap.cs" />
+    <Compile Include="HtmlAgilityPack\MissingXPathException.cs" />
+    <Compile Include="HtmlAgilityPack\MixedCodeDocument.cs" />
+    <Compile Include="HtmlAgilityPack\MixedCodeDocumentCodeFragment.cs" />
+    <Compile Include="HtmlAgilityPack\MixedCodeDocumentFragment.cs" />
+    <Compile Include="HtmlAgilityPack\MixedCodeDocumentFragmentList.cs" />
+    <Compile Include="HtmlAgilityPack\MixedCodeDocumentFragmentType.cs" />
+    <Compile Include="HtmlAgilityPack\MixedCodeDocumentTextFragment.cs" />
+    <Compile Include="HtmlAgilityPack\NameValuePairList.cs" />
+    <Compile Include="HtmlAgilityPack\NodeAttributeNotFoundException.cs" />
+    <Compile Include="HtmlAgilityPack\NodeNotFoundException.cs" />
+    <Compile Include="HtmlAgilityPack\ReturnType.cs" />
+    <Compile Include="HtmlAgilityPack\SkipNodeNotFoundAttribute.cs" />
+    <Compile Include="HtmlAgilityPack\Tools.cs" />
+    <Compile Include="HtmlAgilityPack\Trace.cs" />
+    <Compile Include="HtmlAgilityPack\Utilities.cs" />
+    <Compile Include="HtmlAgilityPack\XPathAttribute.cs" />
+    <Compile Include="ImageDiff\AnalyzerTypes.cs" />
+    <Compile Include="ImageDiff\BoundingBoxes\MultipleBoundingBoxIdentifier.cs" />
+    <Compile Include="ImageDiff\BoundingBoxes\SingleBoundingBoxIdentifer.cs" />
+    <Compile Include="ImageDiff\BoundingBoxModes.cs" />
+    <Compile Include="ImageDiff\LabelerTypes.cs" />
+    <Compile Include="LibBundle\BundleContainer.cs" />
+    <Compile Include="LibBundle\IndexContainer.cs" />
+    <Compile Include="LibBundle\Records\BundleRecord.cs" />
+    <Compile Include="LibBundle\Records\DirectoryRecord.cs" />
+    <Compile Include="LibBundle\Records\FileRecord.cs" />
+    <Compile Include="LibGGPK\DirectoryTreeNode.cs" />
+    <Compile Include="LibGGPK\GrindingGearsPackageContainer.cs" />
+    <Compile Include="LibGGPK\Murmur.cs" />
+    <Compile Include="LibGGPK\Records\BaseRecord.cs" />
+    <Compile Include="LibGGPK\Records\DirectoryRecord.cs" />
+    <Compile Include="LibGGPK\Records\FileRecord.cs" />
+    <Compile Include="LibGGPK\Records\FreeRecord.cs" />
+    <Compile Include="LibGGPK\Records\GgpkRecord.cs" />
+    <Compile Include="Microsoft\CodeAnalysis\EmbeddedAttribute.cs" />
+    <Compile Include="Microsoft\CodeAnalysis\EmbeddedAttribute1.cs" />
+    <Compile Include="Microsoft\CodeAnalysis\EmbeddedAttribute2.cs" />
+    <Compile Include="NaCl\Curve25519.cs" />
+    <Compile Include="NaCl\Curve25519XSalsa20Poly1305.cs" />
+    <Compile Include="NaCl\Internal\Common.cs" />
+    <Compile Include="NaCl\Internal\Constants.cs" />
+    <Compile Include="NaCl\Internal\Fe25519.cs" />
+    <Compile Include="NaCl\Internal\HSalsa20.cs" />
+    <Compile Include="NaCl\Internal\SafeComparison.cs" />
+    <Compile Include="NaCl\Internal\Salsa20.cs" />
+    <Compile Include="NaCl\Internal\StreamSalsa20.cs" />
+    <Compile Include="NaCl\Internal\StreamSalsa20Xor.cs" />
+    <Compile Include="NaCl\Poly1305.cs" />
+    <Compile Include="NaCl\XSalsa20.cs" />
+    <Compile Include="NaCl\XSalsa20Poly1305.cs" />
+    <Compile Include="NetMQ\Utils\ArrayExtensions.cs" />
+    <Compile Include="Newtonsoft\Json\Bson\BsonArray.cs" />
+    <Compile Include="Newtonsoft\Json\Bson\BsonBinary.cs" />
+    <Compile Include="Newtonsoft\Json\Bson\BsonBinaryType.cs" />
+    <Compile Include="Newtonsoft\Json\Bson\BsonBinaryWriter.cs" />
+    <Compile Include="Newtonsoft\Json\Bson\BsonBoolean.cs" />
+    <Compile Include="Newtonsoft\Json\Bson\BsonEmpty.cs" />
+    <Compile Include="Newtonsoft\Json\Bson\BsonObject.cs" />
+    <Compile Include="Newtonsoft\Json\Bson\BsonObjectId.cs" />
+    <Compile Include="Newtonsoft\Json\Bson\BsonProperty.cs" />
+    <Compile Include="Newtonsoft\Json\Bson\BsonReader.cs" />
+    <Compile Include="Newtonsoft\Json\Bson\BsonRegex.cs" />
+    <Compile Include="Newtonsoft\Json\Bson\BsonString.cs" />
+    <Compile Include="Newtonsoft\Json\Bson\BsonToken.cs" />
+    <Compile Include="Newtonsoft\Json\Bson\BsonType.cs" />
+    <Compile Include="Newtonsoft\Json\Bson\BsonValue.cs" />
+    <Compile Include="Newtonsoft\Json\Bson\BsonWriter.cs" />
+    <Compile Include="Newtonsoft\Json\ConstructorHandling.cs" />
+    <Compile Include="Newtonsoft\Json\Converters\BinaryConverter.cs" />
+    <Compile Include="Newtonsoft\Json\Converters\BsonObjectIdConverter.cs" />
+    <Compile Include="Newtonsoft\Json\Converters\CustomCreationConverter.cs" />
+    <Compile Include="Newtonsoft\Json\Converters\DataSetConverter.cs" />
+    <Compile Include="Newtonsoft\Json\Converters\DataTableConverter.cs" />
+    <Compile Include="Newtonsoft\Json\Converters\DateTimeConverterBase.cs" />
+    <Compile Include="Newtonsoft\Json\Converters\DiscriminatedUnionConverter.cs" />
+    <Compile Include="Newtonsoft\Json\Converters\EntityKeyMemberConverter.cs" />
+    <Compile Include="Newtonsoft\Json\Converters\ExpandoObjectConverter.cs" />
+    <Compile Include="Newtonsoft\Json\Converters\IsoDateTimeConverter.cs" />
+    <Compile Include="Newtonsoft\Json\Converters\IXmlDeclaration.cs" />
+    <Compile Include="Newtonsoft\Json\Converters\IXmlDocument.cs" />
+    <Compile Include="Newtonsoft\Json\Converters\IXmlDocumentType.cs" />
+    <Compile Include="Newtonsoft\Json\Converters\IXmlElement.cs" />
+    <Compile Include="Newtonsoft\Json\Converters\IXmlNode.cs" />
+    <Compile Include="Newtonsoft\Json\Converters\JavaScriptDateTimeConverter.cs" />
+    <Compile Include="Newtonsoft\Json\Converters\KeyValuePairConverter.cs" />
+    <Compile Include="Newtonsoft\Json\Converters\RegexConverter.cs" />
+    <Compile Include="Newtonsoft\Json\Converters\StringEnumConverter.cs" />
+    <Compile Include="Newtonsoft\Json\Converters\UnixDateTimeConverter.cs" />
+    <Compile Include="Newtonsoft\Json\Converters\VersionConverter.cs" />
+    <Compile Include="Newtonsoft\Json\Converters\XAttributeWrapper.cs" />
+    <Compile Include="Newtonsoft\Json\Converters\XCommentWrapper.cs" />
+    <Compile Include="Newtonsoft\Json\Converters\XContainerWrapper.cs" />
+    <Compile Include="Newtonsoft\Json\Converters\XDeclarationWrapper.cs" />
+    <Compile Include="Newtonsoft\Json\Converters\XDocumentTypeWrapper.cs" />
+    <Compile Include="Newtonsoft\Json\Converters\XDocumentWrapper.cs" />
+    <Compile Include="Newtonsoft\Json\Converters\XElementWrapper.cs" />
+    <Compile Include="Newtonsoft\Json\Converters\XmlDeclarationWrapper.cs" />
+    <Compile Include="Newtonsoft\Json\Converters\XmlDocumentTypeWrapper.cs" />
+    <Compile Include="Newtonsoft\Json\Converters\XmlDocumentWrapper.cs" />
+    <Compile Include="Newtonsoft\Json\Converters\XmlElementWrapper.cs" />
+    <Compile Include="Newtonsoft\Json\Converters\XmlNodeConverter.cs" />
+    <Compile Include="Newtonsoft\Json\Converters\XmlNodeWrapper.cs" />
+    <Compile Include="Newtonsoft\Json\Converters\XObjectWrapper.cs" />
+    <Compile Include="Newtonsoft\Json\Converters\XProcessingInstructionWrapper.cs" />
+    <Compile Include="Newtonsoft\Json\Converters\XTextWrapper.cs" />
+    <Compile Include="Newtonsoft\Json\DateFormatHandling.cs" />
+    <Compile Include="Newtonsoft\Json\DateParseHandling.cs" />
+    <Compile Include="Newtonsoft\Json\DateTimeZoneHandling.cs" />
+    <Compile Include="Newtonsoft\Json\DefaultJsonNameTable.cs" />
+    <Compile Include="Newtonsoft\Json\DefaultValueHandling.cs" />
+    <Compile Include="Newtonsoft\Json\FloatFormatHandling.cs" />
+    <Compile Include="Newtonsoft\Json\FloatParseHandling.cs" />
+    <Compile Include="Newtonsoft\Json\Formatting.cs" />
+    <Compile Include="Newtonsoft\Json\IArrayPool.cs" />
+    <Compile Include="Newtonsoft\Json\IJsonLineInfo.cs" />
+    <Compile Include="Newtonsoft\Json\JsonArrayAttribute.cs" />
+    <Compile Include="Newtonsoft\Json\JsonConstructorAttribute.cs" />
+    <Compile Include="Newtonsoft\Json\JsonContainerAttribute.cs" />
+    <Compile Include="Newtonsoft\Json\JsonContainerType.cs" />
+    <Compile Include="Newtonsoft\Json\JsonConvert.cs" />
+    <Compile Include="Newtonsoft\Json\JsonConverter.2.cs" />
+    <Compile Include="Newtonsoft\Json\JsonConverter.cs" />
+    <Compile Include="Newtonsoft\Json\JsonConverterAttribute.cs" />
+    <Compile Include="Newtonsoft\Json\JsonConverterCollection.cs" />
+    <Compile Include="Newtonsoft\Json\JsonDictionaryAttribute.cs" />
+    <Compile Include="Newtonsoft\Json\JsonException.cs" />
+    <Compile Include="Newtonsoft\Json\JsonExtensionDataAttribute.cs" />
+    <Compile Include="Newtonsoft\Json\JsonIgnoreAttribute.cs" />
+    <Compile Include="Newtonsoft\Json\JsonNameTable.cs" />
+    <Compile Include="Newtonsoft\Json\JsonObjectAttribute.cs" />
+    <Compile Include="Newtonsoft\Json\JsonPosition.cs" />
+    <Compile Include="Newtonsoft\Json\JsonPropertyAttribute.cs" />
+    <Compile Include="Newtonsoft\Json\JsonReader.cs" />
+    <Compile Include="Newtonsoft\Json\JsonReaderException.cs" />
+    <Compile Include="Newtonsoft\Json\JsonRequiredAttribute.cs" />
+    <Compile Include="Newtonsoft\Json\JsonSerializationException.cs" />
+    <Compile Include="Newtonsoft\Json\JsonSerializer.cs" />
+    <Compile Include="Newtonsoft\Json\JsonSerializerSettings.cs" />
+    <Compile Include="Newtonsoft\Json\JsonTextReader.cs" />
+    <Compile Include="Newtonsoft\Json\JsonTextWriter.cs" />
+    <Compile Include="Newtonsoft\Json\JsonToken.cs" />
+    <Compile Include="Newtonsoft\Json\JsonValidatingReader.cs" />
+    <Compile Include="Newtonsoft\Json\JsonWriter.cs" />
+    <Compile Include="Newtonsoft\Json\JsonWriterException.cs" />
+    <Compile Include="Newtonsoft\Json\Linq\CommentHandling.cs" />
+    <Compile Include="Newtonsoft\Json\Linq\DuplicatePropertyNameHandling.cs" />
+    <Compile Include="Newtonsoft\Json\Linq\Extensions.cs" />
+    <Compile Include="Newtonsoft\Json\Linq\IJEnumerable.cs" />
+    <Compile Include="Newtonsoft\Json\Linq\JArray.cs" />
+    <Compile Include="Newtonsoft\Json\Linq\JConstructor.cs" />
+    <Compile Include="Newtonsoft\Json\Linq\JContainer.cs" />
+    <Compile Include="Newtonsoft\Json\Linq\JEnumerable.cs" />
+    <Compile Include="Newtonsoft\Json\Linq\JObject.cs" />
+    <Compile Include="Newtonsoft\Json\Linq\JProperty.cs" />
+    <Compile Include="Newtonsoft\Json\Linq\JPropertyDescriptor.cs" />
+    <Compile Include="Newtonsoft\Json\Linq\JPropertyKeyedCollection.cs" />
+    <Compile Include="Newtonsoft\Json\Linq\JRaw.cs" />
+    <Compile Include="Newtonsoft\Json\Linq\JsonLoadSettings.cs" />
+    <Compile Include="Newtonsoft\Json\Linq\JsonMergeSettings.cs" />
+    <Compile Include="Newtonsoft\Json\Linq\JsonPath\ArrayIndexFilter.cs" />
+    <Compile Include="Newtonsoft\Json\Linq\JsonPath\ArrayMultipleIndexFilter.cs" />
+    <Compile Include="Newtonsoft\Json\Linq\JsonPath\ArraySliceFilter.cs" />
+    <Compile Include="Newtonsoft\Json\Linq\JsonPath\BooleanQueryExpression.cs" />
+    <Compile Include="Newtonsoft\Json\Linq\JsonPath\CompositeExpression.cs" />
+    <Compile Include="Newtonsoft\Json\Linq\JsonPath\FieldFilter.cs" />
+    <Compile Include="Newtonsoft\Json\Linq\JsonPath\FieldMultipleFilter.cs" />
+    <Compile Include="Newtonsoft\Json\Linq\JsonPath\JPath.cs" />
+    <Compile Include="Newtonsoft\Json\Linq\JsonPath\PathFilter.cs" />
+    <Compile Include="Newtonsoft\Json\Linq\JsonPath\QueryExpression.cs" />
+    <Compile Include="Newtonsoft\Json\Linq\JsonPath\QueryFilter.cs" />
+    <Compile Include="Newtonsoft\Json\Linq\JsonPath\QueryOperator.cs" />
+    <Compile Include="Newtonsoft\Json\Linq\JsonPath\QueryScanFilter.cs" />
+    <Compile Include="Newtonsoft\Json\Linq\JsonPath\RootFilter.cs" />
+    <Compile Include="Newtonsoft\Json\Linq\JsonPath\ScanFilter.cs" />
+    <Compile Include="Newtonsoft\Json\Linq\JsonPath\ScanMultipleFilter.cs" />
+    <Compile Include="Newtonsoft\Json\Linq\JToken.cs" />
+    <Compile Include="Newtonsoft\Json\Linq\JTokenEqualityComparer.cs" />
+    <Compile Include="Newtonsoft\Json\Linq\JTokenReader.cs" />
+    <Compile Include="Newtonsoft\Json\Linq\JTokenType.cs" />
+    <Compile Include="Newtonsoft\Json\Linq\JTokenWriter.cs" />
+    <Compile Include="Newtonsoft\Json\Linq\JValue.cs" />
+    <Compile Include="Newtonsoft\Json\Linq\LineInfoHandling.cs" />
+    <Compile Include="Newtonsoft\Json\Linq\MergeArrayHandling.cs" />
+    <Compile Include="Newtonsoft\Json\Linq\MergeNullValueHandling.cs" />
+    <Compile Include="Newtonsoft\Json\MemberSerialization.cs" />
+    <Compile Include="Newtonsoft\Json\MetadataPropertyHandling.cs" />
+    <Compile Include="Newtonsoft\Json\MissingMemberHandling.cs" />
+    <Compile Include="Newtonsoft\Json\NullValueHandling.cs" />
+    <Compile Include="Newtonsoft\Json\ObjectCreationHandling.cs" />
+    <Compile Include="Newtonsoft\Json\PreserveReferencesHandling.cs" />
+    <Compile Include="Newtonsoft\Json\ReadType.cs" />
+    <Compile Include="Newtonsoft\Json\ReferenceLoopHandling.cs" />
+    <Compile Include="Newtonsoft\Json\Required.cs" />
+    <Compile Include="Newtonsoft\Json\Schema\Extensions.cs" />
+    <Compile Include="Newtonsoft\Json\Schema\JsonSchema.cs" />
+    <Compile Include="Newtonsoft\Json\Schema\JsonSchemaBuilder.cs" />
+    <Compile Include="Newtonsoft\Json\Schema\JsonSchemaConstants.cs" />
+    <Compile Include="Newtonsoft\Json\Schema\JsonSchemaException.cs" />
+    <Compile Include="Newtonsoft\Json\Schema\JsonSchemaGenerator.cs" />
+    <Compile Include="Newtonsoft\Json\Schema\JsonSchemaModel.cs" />
+    <Compile Include="Newtonsoft\Json\Schema\JsonSchemaModelBuilder.cs" />
+    <Compile Include="Newtonsoft\Json\Schema\JsonSchemaNode.cs" />
+    <Compile Include="Newtonsoft\Json\Schema\JsonSchemaNodeCollection.cs" />
+    <Compile Include="Newtonsoft\Json\Schema\JsonSchemaResolver.cs" />
+    <Compile Include="Newtonsoft\Json\Schema\JsonSchemaType.cs" />
+    <Compile Include="Newtonsoft\Json\Schema\JsonSchemaWriter.cs" />
+    <Compile Include="Newtonsoft\Json\Schema\UndefinedSchemaIdHandling.cs" />
+    <Compile Include="Newtonsoft\Json\Schema\ValidationEventArgs.cs" />
+    <Compile Include="Newtonsoft\Json\Schema\ValidationEventHandler.cs" />
+    <Compile Include="Newtonsoft\Json\Serialization\CachedAttributeGetter.cs" />
+    <Compile Include="Newtonsoft\Json\Serialization\CamelCaseNamingStrategy.cs" />
+    <Compile Include="Newtonsoft\Json\Serialization\CamelCasePropertyNamesContractResolver.cs" />
+    <Compile Include="Newtonsoft\Json\Serialization\DefaultContractResolver.cs" />
+    <Compile Include="Newtonsoft\Json\Serialization\DefaultNamingStrategy.cs" />
+    <Compile Include="Newtonsoft\Json\Serialization\DefaultReferenceResolver.cs" />
+    <Compile Include="Newtonsoft\Json\Serialization\DefaultSerializationBinder.cs" />
+    <Compile Include="Newtonsoft\Json\Serialization\DiagnosticsTraceWriter.cs" />
+    <Compile Include="Newtonsoft\Json\Serialization\DynamicValueProvider.cs" />
+    <Compile Include="Newtonsoft\Json\Serialization\ErrorContext.cs" />
+    <Compile Include="Newtonsoft\Json\Serialization\ErrorEventArgs.cs" />
+    <Compile Include="Newtonsoft\Json\Serialization\ExpressionValueProvider.cs" />
+    <Compile Include="Newtonsoft\Json\Serialization\ExtensionDataGetter.cs" />
+    <Compile Include="Newtonsoft\Json\Serialization\ExtensionDataSetter.cs" />
+    <Compile Include="Newtonsoft\Json\Serialization\IAttributeProvider.cs" />
+    <Compile Include="Newtonsoft\Json\Serialization\IContractResolver.cs" />
+    <Compile Include="Newtonsoft\Json\Serialization\IReferenceResolver.cs" />
+    <Compile Include="Newtonsoft\Json\Serialization\ISerializationBinder.cs" />
+    <Compile Include="Newtonsoft\Json\Serialization\ITraceWriter.cs" />
+    <Compile Include="Newtonsoft\Json\Serialization\IValueProvider.cs" />
+    <Compile Include="Newtonsoft\Json\Serialization\JsonArrayContract.cs" />
+    <Compile Include="Newtonsoft\Json\Serialization\JsonContainerContract.cs" />
+    <Compile Include="Newtonsoft\Json\Serialization\JsonContract.cs" />
+    <Compile Include="Newtonsoft\Json\Serialization\JsonContractType.cs" />
+    <Compile Include="Newtonsoft\Json\Serialization\JsonDictionaryContract.cs" />
+    <Compile Include="Newtonsoft\Json\Serialization\JsonDynamicContract.cs" />
+    <Compile Include="Newtonsoft\Json\Serialization\JsonFormatterConverter.cs" />
+    <Compile Include="Newtonsoft\Json\Serialization\JsonISerializableContract.cs" />
+    <Compile Include="Newtonsoft\Json\Serialization\JsonLinqContract.cs" />
+    <Compile Include="Newtonsoft\Json\Serialization\JsonObjectContract.cs" />
+    <Compile Include="Newtonsoft\Json\Serialization\JsonPrimitiveContract.cs" />
+    <Compile Include="Newtonsoft\Json\Serialization\JsonProperty.cs" />
+    <Compile Include="Newtonsoft\Json\Serialization\JsonPropertyCollection.cs" />
+    <Compile Include="Newtonsoft\Json\Serialization\JsonSerializerInternalBase.cs" />
+    <Compile Include="Newtonsoft\Json\Serialization\JsonSerializerInternalReader.cs" />
+    <Compile Include="Newtonsoft\Json\Serialization\JsonSerializerInternalWriter.cs" />
+    <Compile Include="Newtonsoft\Json\Serialization\JsonSerializerProxy.cs" />
+    <Compile Include="Newtonsoft\Json\Serialization\JsonStringContract.cs" />
+    <Compile Include="Newtonsoft\Json\Serialization\JsonTypeReflector.cs" />
+    <Compile Include="Newtonsoft\Json\Serialization\MemoryTraceWriter.cs" />
+    <Compile Include="Newtonsoft\Json\Serialization\NamingStrategy.cs" />
+    <Compile Include="Newtonsoft\Json\Serialization\ObjectConstructor.cs" />
+    <Compile Include="Newtonsoft\Json\Serialization\OnErrorAttribute.cs" />
+    <Compile Include="Newtonsoft\Json\Serialization\ReflectionAttributeProvider.cs" />
+    <Compile Include="Newtonsoft\Json\Serialization\ReflectionValueProvider.cs" />
+    <Compile Include="Newtonsoft\Json\Serialization\SerializationBinderAdapter.cs" />
+    <Compile Include="Newtonsoft\Json\Serialization\SerializationCallback.cs" />
+    <Compile Include="Newtonsoft\Json\Serialization\SerializationErrorCallback.cs" />
+    <Compile Include="Newtonsoft\Json\Serialization\SnakeCaseNamingStrategy.cs" />
+    <Compile Include="Newtonsoft\Json\Serialization\TraceJsonReader.cs" />
+    <Compile Include="Newtonsoft\Json\Serialization\TraceJsonWriter.cs" />
+    <Compile Include="Newtonsoft\Json\StringEscapeHandling.cs" />
+    <Compile Include="Newtonsoft\Json\TypeNameAssemblyFormatHandling.cs" />
+    <Compile Include="Newtonsoft\Json\TypeNameHandling.cs" />
+    <Compile Include="Newtonsoft\Json\Utilities\AsyncUtils.cs" />
+    <Compile Include="Newtonsoft\Json\Utilities\Base64Encoder.cs" />
+    <Compile Include="Newtonsoft\Json\Utilities\BidirectionalDictionary.cs" />
+    <Compile Include="Newtonsoft\Json\Utilities\BufferUtils.cs" />
+    <Compile Include="Newtonsoft\Json\Utilities\CollectionUtils.cs" />
+    <Compile Include="Newtonsoft\Json\Utilities\CollectionWrapper.cs" />
+    <Compile Include="Newtonsoft\Json\Utilities\ConvertUtils.cs" />
+    <Compile Include="Newtonsoft\Json\Utilities\Creator.cs" />
+    <Compile Include="Newtonsoft\Json\Utilities\DateTimeParser.cs" />
+    <Compile Include="Newtonsoft\Json\Utilities\DateTimeUtils.cs" />
+    <Compile Include="Newtonsoft\Json\Utilities\DictionaryWrapper.cs" />
+    <Compile Include="Newtonsoft\Json\Utilities\DynamicProxy.cs" />
+    <Compile Include="Newtonsoft\Json\Utilities\DynamicProxyMetaObject.cs" />
+    <Compile Include="Newtonsoft\Json\Utilities\DynamicReflectionDelegateFactory.cs" />
+    <Compile Include="Newtonsoft\Json\Utilities\DynamicUtils.cs" />
+    <Compile Include="Newtonsoft\Json\Utilities\EnumInfo.cs" />
+    <Compile Include="Newtonsoft\Json\Utilities\EnumUtils.cs" />
+    <Compile Include="Newtonsoft\Json\Utilities\ExpressionReflectionDelegateFactory.cs" />
+    <Compile Include="Newtonsoft\Json\Utilities\FSharpFunction.cs" />
+    <Compile Include="Newtonsoft\Json\Utilities\FSharpUtils.cs" />
+    <Compile Include="Newtonsoft\Json\Utilities\ILGeneratorExtensions.cs" />
+    <Compile Include="Newtonsoft\Json\Utilities\ImmutableCollectionsUtils.cs" />
+    <Compile Include="Newtonsoft\Json\Utilities\IWrappedCollection.cs" />
+    <Compile Include="Newtonsoft\Json\Utilities\IWrappedDictionary.cs" />
+    <Compile Include="Newtonsoft\Json\Utilities\JavaScriptUtils.cs" />
+    <Compile Include="Newtonsoft\Json\Utilities\JsonTokenUtils.cs" />
+    <Compile Include="Newtonsoft\Json\Utilities\LateBoundReflectionDelegateFactory.cs" />
+    <Compile Include="Newtonsoft\Json\Utilities\MathUtils.cs" />
+    <Compile Include="Newtonsoft\Json\Utilities\MethodCall.cs" />
+    <Compile Include="Newtonsoft\Json\Utilities\MiscellaneousUtils.cs" />
+    <Compile Include="Newtonsoft\Json\Utilities\NoThrowExpressionVisitor.cs" />
+    <Compile Include="Newtonsoft\Json\Utilities\NoThrowGetBinderMember.cs" />
+    <Compile Include="Newtonsoft\Json\Utilities\NoThrowSetBinderMember.cs" />
+    <Compile Include="Newtonsoft\Json\Utilities\ParseResult.cs" />
+    <Compile Include="Newtonsoft\Json\Utilities\ParserTimeZone.cs" />
+    <Compile Include="Newtonsoft\Json\Utilities\PrimitiveTypeCode.cs" />
+    <Compile Include="Newtonsoft\Json\Utilities\ReflectionDelegateFactory.cs" />
+    <Compile Include="Newtonsoft\Json\Utilities\ReflectionMember.cs" />
+    <Compile Include="Newtonsoft\Json\Utilities\ReflectionObject.cs" />
+    <Compile Include="Newtonsoft\Json\Utilities\ReflectionUtils.cs" />
+    <Compile Include="Newtonsoft\Json\Utilities\StringBuffer.cs" />
+    <Compile Include="Newtonsoft\Json\Utilities\StringReference.cs" />
+    <Compile Include="Newtonsoft\Json\Utilities\StringReferenceExtensions.cs" />
+    <Compile Include="Newtonsoft\Json\Utilities\StringUtils.cs" />
+    <Compile Include="Newtonsoft\Json\Utilities\StructMultiKey.cs" />
+    <Compile Include="Newtonsoft\Json\Utilities\ThreadSafeStore.cs" />
+    <Compile Include="Newtonsoft\Json\Utilities\TypeExtensions.cs" />
+    <Compile Include="Newtonsoft\Json\Utilities\TypeInformation.cs" />
+    <Compile Include="Newtonsoft\Json\Utilities\ValidationUtils.cs" />
+    <Compile Include="Newtonsoft\Json\WriteState.cs" />
+    <Compile Include="ns0\Class0.cs" />
+    <Compile Include="ns0\Class130.cs" />
+    <Compile Include="ns0\Class255.cs" />
+    <Compile Include="ns0\Class257.cs" />
+    <Compile Include="ns0\Class281.cs" />
+    <Compile Include="ns0\Class305.cs" />
+    <Compile Include="ns0\Class307.cs" />
+    <Compile Include="ns0\Class384.cs" />
+    <Compile Include="ns10\Class137.cs" />
+    <Compile Include="ns10\Class267.cs" />
+    <Compile Include="ns10\Class277.cs" />
+    <Compile Include="ns10\Form0.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ns10\Form0.Designer.cs">
+      <DependentUpon>Form0.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ns11\Class105.cs" />
+    <Compile Include="ns11\Class398.cs" />
+    <Compile Include="ns12\Attribute5.cs" />
+    <Compile Include="ns12\Class120.cs" />
+    <Compile Include="ns12\Class129.cs" />
+    <Compile Include="ns12\Class270.cs" />
+    <Compile Include="ns12\Enum17.cs" />
+    <Compile Include="ns13\Enum1.cs" />
+    <Compile Include="ns13\Enum10.cs" />
+    <Compile Include="ns14\Class395.cs" />
+    <Compile Include="ns14\Enum2.cs" />
+    <Compile Include="ns15\Class250.cs" />
+    <Compile Include="ns15\Class400.cs" />
+    <Compile Include="ns15\Struct2.cs" />
+    <Compile Include="ns16\Class234.cs" />
+    <Compile Include="ns16\Class254.cs" />
+    <Compile Include="ns16\Form2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ns16\Form2.Designer.cs">
+      <DependentUpon>Form2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ns17\Class121.cs" />
+    <Compile Include="ns17\Class279.cs" />
+    <Compile Include="ns17\Class295.cs" />
+    <Compile Include="ns17\Class299.cs" />
+    <Compile Include="ns17\Class303.cs" />
+    <Compile Include="ns17\Class397.cs" />
+    <Compile Include="ns17\Enum4.cs" />
+    <Compile Include="ns18\Class236.cs" />
+    <Compile Include="ns18\Class290.cs" />
+    <Compile Include="ns18\Form3.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ns18\Form3.Designer.cs">
+      <DependentUpon>Form3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ns19\Class301.cs" />
+    <Compile Include="ns19\Form4.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ns19\Form4.Designer.cs">
+      <DependentUpon>Form4.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ns1\Attribute3.cs" />
+    <Compile Include="ns1\Class1.cs" />
+    <Compile Include="ns1\Class11.cs" />
+    <Compile Include="ns1\Class128.cs" />
+    <Compile Include="ns1\Class276.cs" />
+    <Compile Include="ns1\Class288.cs" />
+    <Compile Include="ns1\Class391.cs" />
+    <Compile Include="ns1\Class4.cs" />
+    <Compile Include="ns1\Interface2.cs" />
+    <Compile Include="ns1\Interface3.cs" />
+    <Compile Include="ns20\Attribute9.cs" />
+    <Compile Include="ns20\Class122.cs" />
+    <Compile Include="ns20\Class164.cs" />
+    <Compile Include="ns20\Class230.cs" />
+    <Compile Include="ns20\Class291.cs" />
+    <Compile Include="ns20\Class401.cs" />
+    <Compile Include="ns21\Attribute4.cs" />
+    <Compile Include="ns21\Class123.cs" />
+    <Compile Include="ns21\Class133.cs" />
+    <Compile Include="ns21\Class139.cs" />
+    <Compile Include="ns21\Class218.cs" />
+    <Compile Include="ns21\Class264.cs" />
+    <Compile Include="ns21\Class278.cs" />
+    <Compile Include="ns21\Class413.cs" />
+    <Compile Include="ns22\Class131.cs" />
+    <Compile Include="ns22\Class217.cs" />
+    <Compile Include="ns22\Class246.cs" />
+    <Compile Include="ns22\Class266.cs" />
+    <Compile Include="ns22\Enum19.cs" />
+    <Compile Include="ns23\Class132.cs" />
+    <Compile Include="ns23\Class145.cs" />
+    <Compile Include="ns23\Class239.cs" />
+    <Compile Include="ns24\Attribute7.cs" />
+    <Compile Include="ns24\Class134.cs" />
+    <Compile Include="ns24\Class196.cs" />
+    <Compile Include="ns24\Class228.cs" />
+    <Compile Include="ns24\Class233.cs" />
+    <Compile Include="ns24\Class252.cs" />
+    <Compile Include="ns25\Class135.cs" />
+    <Compile Include="ns25\Class175.cs" />
+    <Compile Include="ns25\Class197.cs" />
+    <Compile Include="ns25\Class244.cs" />
+    <Compile Include="ns25\Class245.cs" />
+    <Compile Include="ns25\Class383.cs" />
+    <Compile Include="ns26\Class136.cs" />
+    <Compile Include="ns26\Class265.cs" />
+    <Compile Include="ns27\Class140.cs" />
+    <Compile Include="ns27\Class180.cs" />
+    <Compile Include="ns27\Class241.cs" />
+    <Compile Include="ns27\Class300.cs" />
+    <Compile Include="ns27\Class396.cs" />
+    <Compile Include="ns28\Attribute6.cs" />
+    <Compile Include="ns28\Class141.cs" />
+    <Compile Include="ns28\Class178.cs" />
+    <Compile Include="ns28\Class259.cs" />
+    <Compile Include="ns29\Class143.cs" />
+    <Compile Include="ns29\Class173.cs" />
+    <Compile Include="ns29\Class224.cs" />
+    <Compile Include="ns29\Class237.cs" />
+    <Compile Include="ns29\Class242.cs" />
+    <Compile Include="ns29\Class256.cs" />
+    <Compile Include="ns29\Class274.cs" />
+    <Compile Include="ns29\Class308.cs" />
+    <Compile Include="ns29\Class402.cs" />
+    <Compile Include="ns29\Enum11.cs" />
+    <Compile Include="ns29\Enum3.cs" />
+    <Compile Include="ns29\Enum9.cs" />
+    <Compile Include="ns2\Class2.cs" />
+    <Compile Include="ns2\Class283.cs" />
+    <Compile Include="ns2\Class394.cs" />
+    <Compile Include="ns2\Enum8.cs" />
+    <Compile Include="ns2\Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ns2\Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ns30\Attribute2.cs" />
+    <Compile Include="ns30\Class146.cs" />
+    <Compile Include="ns30\Class285.cs" />
+    <Compile Include="ns31\Class148.cs" />
+    <Compile Include="ns31\Class229.cs" />
+    <Compile Include="ns31\Class248.cs" />
+    <Compile Include="ns32\Class149.cs" />
+    <Compile Include="ns32\Class240.cs" />
+    <Compile Include="ns32\Class251.cs" />
+    <Compile Include="ns33\Class151.cs" />
+    <Compile Include="ns33\Class231.cs" />
+    <Compile Include="ns33\Class253.cs" />
+    <Compile Include="ns33\Class297.cs" />
+    <Compile Include="ns33\Enum7.cs" />
+    <Compile Include="ns34\Class163.cs" />
+    <Compile Include="ns34\Class235.cs" />
+    <Compile Include="ns34\Class249.cs" />
+    <Compile Include="ns34\Class269.cs" />
+    <Compile Include="ns34\Class294.cs" />
+    <Compile Include="ns34\Enum13.cs" />
+    <Compile Include="ns34\Enum6.cs" />
+    <Compile Include="ns35\Attribute8.cs" />
+    <Compile Include="ns35\Class181.cs" />
+    <Compile Include="ns35\Class223.cs" />
+    <Compile Include="ns36\Class219.cs" />
+    <Compile Include="ns36\Class238.cs" />
+    <Compile Include="ns36\Class247.cs" />
+    <Compile Include="ns36\Enum12.cs" />
+    <Compile Include="ns36\Enum18.cs" />
+    <Compile Include="ns36\Enum21.cs" />
+    <Compile Include="ns37\Class220.cs" />
+    <Compile Include="ns37\Class275.cs" />
+    <Compile Include="ns38\Class225.cs" />
+    <Compile Include="ns38\Class284.cs" />
+    <Compile Include="ns38\Enum15.cs" />
+    <Compile Include="ns39\Class260.cs" />
+    <Compile Include="ns39\Enum5.cs" />
+    <Compile Include="ns3\Attribute0.cs" />
+    <Compile Include="ns3\Class221.cs" />
+    <Compile Include="ns3\Class222.cs" />
+    <Compile Include="ns3\Class273.cs" />
+    <Compile Include="ns3\Class3.cs" />
+    <Compile Include="ns3\Enum14.cs" />
+    <Compile Include="ns3\Interface0.cs" />
+    <Compile Include="ns40\Class272.cs" />
+    <Compile Include="ns40\Class282.cs" />
+    <Compile Include="ns40\Class399.cs" />
+    <Compile Include="ns41\Class287.cs" />
+    <Compile Include="ns42\Class344.cs" />
+    <Compile Include="ns43\Attribute1.cs" />
+    <Compile Include="ns4\Class10.cs" />
+    <Compile Include="ns4\Class138.cs" />
+    <Compile Include="ns4\Class167.cs" />
+    <Compile Include="ns4\Class232.cs" />
+    <Compile Include="ns4\Class268.cs" />
+    <Compile Include="ns4\Class286.cs" />
+    <Compile Include="ns4\Interface1.cs" />
+    <Compile Include="ns5\Class226.cs" />
+    <Compile Include="ns5\Class292.cs" />
+    <Compile Include="ns5\Class6.cs" />
+    <Compile Include="ns6\Class102.cs" />
+    <Compile Include="ns6\Class142.cs" />
+    <Compile Include="ns6\Class361.cs" />
+    <Compile Include="ns6\Class7.cs" />
+    <Compile Include="ns6\Enum16.cs" />
+    <Compile Include="ns6\Form5.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ns6\Form5.Designer.cs">
+      <DependentUpon>Form5.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ns7\Class179.cs" />
+    <Compile Include="ns7\Class280.cs" />
+    <Compile Include="ns7\Class296.cs" />
+    <Compile Include="ns7\Class306.cs" />
+    <Compile Include="ns7\Class9.cs" />
+    <Compile Include="ns8\Class103.cs" />
+    <Compile Include="ns8\Class227.cs" />
+    <Compile Include="ns8\Class293.cs" />
+    <Compile Include="ns8\Class392.cs" />
+    <Compile Include="ns8\Struct0.cs" />
+    <Compile Include="ns9\Class170.cs" />
+    <Compile Include="ns9\Class271.cs" />
+    <Compile Include="ns9\Class289.cs" />
+    <Compile Include="ns9\Struct1.cs" />
+    <Compile Include="PoEv2\BuyingForms\BulkBuyForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PoEv2\BuyingForms\BulkBuyForm.Designer.cs">
+      <DependentUpon>BulkBuyForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PoEv2\BuyingForms\ItemBuyForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PoEv2\BuyingForms\ItemBuyForm.Designer.cs">
+      <DependentUpon>ItemBuyForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PoEv2\BuyingForms\LiveSearchBuyForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PoEv2\BuyingForms\LiveSearchBuyForm.Designer.cs">
+      <DependentUpon>LiveSearchBuyForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PoEv2\Classes\API.cs" />
+    <Compile Include="PoEv2\Classes\Characters.cs" />
+    <Compile Include="PoEv2\Classes\Stashes.cs" />
+    <Compile Include="PoEv2\Classes\Web.cs" />
+    <Compile Include="PoEv2\Classes\Win32.cs" />
+    <Compile Include="PoEv2\DebugPanel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PoEv2\DebugPanel.Designer.cs">
+      <DependentUpon>DebugPanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PoEv2\ExchangePairForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PoEv2\ExchangePairForm.Designer.cs">
+      <DependentUpon>ExchangePairForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PoEv2\ExpectedState.cs" />
+    <Compile Include="PoEv2\Extensions.cs" />
+    <Compile Include="PoEv2\Features\BeastCapture.cs" />
+    <Compile Include="PoEv2\Features\Blackout.cs" />
+    <Compile Include="PoEv2\Features\CleanDumpTab.cs" />
+    <Compile Include="PoEv2\Features\Crafting\Crafter.cs" />
+    <Compile Include="PoEv2\Features\Crafting\MapCrafter.cs" />
+    <Compile Include="PoEv2\Features\Crafting\RareCrafter.cs" />
+    <Compile Include="PoEv2\Features\Crafting\SocketCrafter.cs" />
+    <Compile Include="PoEv2\Features\Crafting\VaalCrafter.cs" />
+    <Compile Include="PoEv2\Features\Expedition\Gwennen.cs" />
+    <Compile Include="PoEv2\Features\Flipping.cs" />
+    <Compile Include="PoEv2\Features\Mule.cs" />
+    <Compile Include="PoEv2\Features\Pricer.cs" />
+    <Compile Include="PoEv2\Features\StackedDeckOpener.cs" />
+    <Compile Include="PoEv2\Features\VendorRecipe.cs" />
+    <Compile Include="PoEv2\FlippingForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PoEv2\FlippingForm.Designer.cs">
+      <DependentUpon>FlippingForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PoEv2\GameProcessState.cs" />
+    <Compile Include="PoEv2\Handlers\CleanInventory.cs" />
+    <Compile Include="PoEv2\Handlers\Events\Messages\BuyMessageProcessor.cs" />
+    <Compile Include="PoEv2\Handlers\Events\Orders\BuyOrderProcessor.cs" />
+    <Compile Include="PoEv2\Handlers\Events\Orders\SellOrderProcessor.cs" />
+    <Compile Include="PoEv2\Handlers\Events\Trades\BuyProcessor.cs" />
+    <Compile Include="PoEv2\Handlers\Events\Trades\SellProcessor.cs" />
+    <Compile Include="PoEv2\Handlers\Events\Trades\TradeProcessor.cs" />
+    <Compile Include="PoEv2\Handlers\Pricing.cs" />
+    <Compile Include="PoEv2\MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PoEv2\MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PoEv2\Managers\Images.cs" />
+    <Compile Include="PoEv2\Managers\InventoryManager.cs" />
+    <Compile Include="PoEv2\Managers\StashManager.cs" />
+    <Compile Include="PoEv2\Models\Api\ApiItem.cs" />
+    <Compile Include="PoEv2\Models\BuyingTradeData.cs" />
+    <Compile Include="PoEv2\Models\Character.cs" />
+    <Compile Include="PoEv2\Models\CraftingBoxData.cs" />
+    <Compile Include="PoEv2\Models\Crafting\Materials.cs" />
+    <Compile Include="PoEv2\Models\Crafting\Mod.cs" />
+    <Compile Include="PoEv2\Models\Crafting\Mods.cs" />
+    <Compile Include="PoEv2\Models\Crafting\Tier.cs" />
+    <Compile Include="PoEv2\Models\DataMethods.cs" />
+    <Compile Include="PoEv2\Models\DivinationCardListItem.cs" />
+    <Compile Include="PoEv2\Models\Flipping\FlippingListJsonItem.cs" />
+    <Compile Include="PoEv2\Models\Flipping\FlippingTypes.cs" />
+    <Compile Include="PoEv2\Models\InstanceZones.cs" />
+    <Compile Include="PoEv2\Models\Item.cs" />
+    <Compile Include="PoEv2\Models\ItemRarity.cs" />
+    <Compile Include="PoEv2\Models\Items\ItemData.cs" />
+    <Compile Include="PoEv2\Models\Items\ItemDatum.cs" />
+    <Compile Include="PoEv2\Models\JsonItem.cs" />
+    <Compile Include="PoEv2\Models\JsonTab.cs" />
+    <Compile Include="PoEv2\Models\KeyToStringHelper.cs" />
+    <Compile Include="PoEv2\Models\MatchTradeContentResults.cs" />
+    <Compile Include="PoEv2\Models\Order.cs" />
+    <Compile Include="PoEv2\Models\Player.cs" />
+    <Compile Include="PoEv2\Models\PoeNinja.cs" />
+    <Compile Include="PoEv2\Models\Position.cs" />
+    <Compile Include="PoEv2\Models\Query\FetchTradeResult.cs" />
+    <Compile Include="PoEv2\Models\Query\Filters\StatType.cs" />
+    <Compile Include="PoEv2\Models\TradeFetchId.cs" />
+    <Compile Include="PoEv2\Models\TradeTypes.cs" />
+    <Compile Include="PoEv2\Models\TradeWindowItem.cs" />
+    <Compile Include="PoEv2\ProcessHelper.cs" />
+    <Compile Include="PoEv2\PublicModels\AccountInfo.cs" />
+    <Compile Include="PoEv2\PublicModels\AffixItemViewModel.cs" />
+    <Compile Include="PoEv2\PublicModels\BulkBuyingListItem.cs" />
+    <Compile Include="PoEv2\PublicModels\ConfigOptions.cs" />
+    <Compile Include="PoEv2\PublicModels\DecimalCurrencyListItem.cs" />
+    <Compile Include="PoEv2\PublicModels\FlippingListItem.cs" />
+    <Compile Include="PoEv2\PublicModels\ItemBuyingListItem.cs" />
+    <Compile Include="PoEv2\PublicModels\ListItemViewModel.cs" />
+    <Compile Include="PoEv2\PublicModels\LiveSearchListItem.cs" />
+    <Compile Include="PoEv2\UI.cs" />
+    <Compile Include="PoEv2\Utilities\ModUtilities.cs" />
+    <Compile Include="PoEv2\Utilities\Util.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="PusherClient\Channel.cs" />
+    <Compile Include="PusherClient\ChannelAuthorizationFailureException.cs" />
+    <Compile Include="PusherClient\ChannelDataDecrypter.cs" />
+    <Compile Include="PusherClient\ChannelDecryptionException.cs" />
+    <Compile Include="PusherClient\ChannelException.cs" />
+    <Compile Include="PusherClient\ChannelTypes.cs" />
+    <Compile Include="PusherClient\ChannelUnauthorizedException.cs" />
+    <Compile Include="PusherClient\ConnectedEventHandler.cs" />
+    <Compile Include="PusherClient\ConnectedEventHandlerException.cs" />
+    <Compile Include="PusherClient\Connection.cs" />
+    <Compile Include="PusherClient\ConnectionState.cs" />
+    <Compile Include="PusherClient\ConnectionStateChangedEventHandler.cs" />
+    <Compile Include="PusherClient\ConnectionStateChangedEventHandlerException.cs" />
+    <Compile Include="PusherClient\Constants.cs" />
+    <Compile Include="PusherClient\DefaultSerializer.cs" />
+    <Compile Include="PusherClient\DisconnectedEventHandlerException.cs" />
+    <Compile Include="PusherClient\DynamicEventEmitter.cs" />
+    <Compile Include="PusherClient\EncryptedChannelData.cs" />
+    <Compile Include="PusherClient\ErrorCodes.cs" />
+    <Compile Include="PusherClient\ErrorConstants.cs" />
+    <Compile Include="PusherClient\ErrorEventHandler.cs" />
+    <Compile Include="PusherClient\EventEmitter.2.cs" />
+    <Compile Include="PusherClient\EventEmitter.cs" />
+    <Compile Include="PusherClient\EventEmitterActionException.cs" />
+    <Compile Include="PusherClient\EventHandlerException.cs" />
+    <Compile Include="PusherClient\GenericPresenceChannel.cs" />
+    <Compile Include="PusherClient\Guard.cs" />
+    <Compile Include="PusherClient\HttpAuthorizer.cs" />
+    <Compile Include="PusherClient\IAuthorizer.cs" />
+    <Compile Include="PusherClient\IAuthorizerAsync.cs" />
+    <Compile Include="PusherClient\IChannelDataDecrypter.cs" />
+    <Compile Include="PusherClient\IChannelException.cs" />
+    <Compile Include="PusherClient\IConnection.cs" />
+    <Compile Include="PusherClient\IEventBinder.2.cs" />
+    <Compile Include="PusherClient\IEventBinder.cs" />
+    <Compile Include="PusherClient\IEventEmitter.cs" />
+    <Compile Include="PusherClient\IPresenceChannel.cs" />
+    <Compile Include="PusherClient\IPresenceChannelManagement.cs" />
+    <Compile Include="PusherClient\IPusher.cs" />
+    <Compile Include="PusherClient\ISerializeObjectsToJson.cs" />
+    <Compile Include="PusherClient\ITraceLogger.cs" />
+    <Compile Include="PusherClient\ITriggerChannels.cs" />
+    <Compile Include="PusherClient\MemberAddedEventHandler.cs" />
+    <Compile Include="PusherClient\MemberAddedEventHandlerException.cs" />
+    <Compile Include="PusherClient\MemberRemovedEventHandler.cs" />
+    <Compile Include="PusherClient\MemberRemovedEventHandlerException.cs" />
+    <Compile Include="PusherClient\OperationException.cs" />
+    <Compile Include="PusherClient\OperationTimeoutException.cs" />
+    <Compile Include="PusherClient\PresenceChannel.cs" />
+    <Compile Include="PusherClient\PrivateChannel.cs" />
+    <Compile Include="PusherClient\Pusher.cs" />
+    <Compile Include="PusherClient\PusherAuthorizedChannelSubscriptionData.cs" />
+    <Compile Include="PusherClient\PusherChannelEvent.cs" />
+    <Compile Include="PusherClient\PusherChannelSubscribeEvent.cs" />
+    <Compile Include="PusherClient\PusherChannelSubscriptionData.cs" />
+    <Compile Include="PusherClient\PusherChannelUnsubscribeEvent.cs" />
+    <Compile Include="PusherClient\PusherEvent.cs" />
+    <Compile Include="PusherClient\PusherEventEmitter.cs" />
+    <Compile Include="PusherClient\PusherException.cs" />
+    <Compile Include="PusherClient\PusherOptions.cs" />
+    <Compile Include="PusherClient\PusherSystemEvent.cs" />
+    <Compile Include="PusherClient\SubscribedEventHandler.cs" />
+    <Compile Include="PusherClient\SubscribedEventHandlerException.cs" />
+    <Compile Include="PusherClient\SubscriptionEventHandler.cs" />
+    <Compile Include="PusherClient\TextEventEmitter.cs" />
+    <Compile Include="PusherClient\TraceLogger.cs" />
+    <Compile Include="PusherClient\TriggerEventException.cs" />
+    <Compile Include="PusherClient\WebsocketException.cs" />
+    <Compile Include="SmartAssembly\Delegates\GetString.cs" />
+    <Compile Include="SmartAssembly\HouseOfCards\MemberRefsProxy.cs" />
+    <Compile Include="SmartAssembly\HouseOfCards\Strings.cs" />
+    <Compile Include="SuperSocket\ClientEngine\AsyncTcpSession.cs" />
+    <Compile Include="SuperSocket\ClientEngine\AuthenticatedStreamTcpSession.cs" />
+    <Compile Include="SuperSocket\ClientEngine\ClientSession.cs" />
+    <Compile Include="SuperSocket\ClientEngine\ConcurrentBatchQueue.cs" />
+    <Compile Include="SuperSocket\ClientEngine\ConnectAsyncExtension.cs" />
+    <Compile Include="SuperSocket\ClientEngine\ConnectedCallback.cs" />
+    <Compile Include="SuperSocket\ClientEngine\DataEventArgs.cs" />
+    <Compile Include="SuperSocket\ClientEngine\ErrorEventArgs.cs" />
+    <Compile Include="SuperSocket\ClientEngine\Extensions.cs" />
+    <Compile Include="SuperSocket\ClientEngine\IBatchQueue.cs" />
+    <Compile Include="SuperSocket\ClientEngine\IBufferSetter.cs" />
+    <Compile Include="SuperSocket\ClientEngine\IClientSession.cs" />
+    <Compile Include="SuperSocket\ClientEngine\IPosList.cs" />
+    <Compile Include="SuperSocket\ClientEngine\IProxyConnector.cs" />
+    <Compile Include="SuperSocket\ClientEngine\PosList.cs" />
+    <Compile Include="SuperSocket\ClientEngine\ProxyEventArgs.cs" />
+    <Compile Include="SuperSocket\ClientEngine\Proxy\HttpConnectProxy.cs" />
+    <Compile Include="SuperSocket\ClientEngine\Proxy\ProxyConnectorBase.cs" />
+    <Compile Include="SuperSocket\ClientEngine\Proxy\ReceiveState.cs" />
+    <Compile Include="SuperSocket\ClientEngine\Proxy\Socks4aConnector.cs" />
+    <Compile Include="SuperSocket\ClientEngine\Proxy\Socks4Connector.cs" />
+    <Compile Include="SuperSocket\ClientEngine\Proxy\Socks5Connector.cs" />
+    <Compile Include="SuperSocket\ClientEngine\SearchMarkState.cs" />
+    <Compile Include="SuperSocket\ClientEngine\SecurityOption.cs" />
+    <Compile Include="SuperSocket\ClientEngine\SslStreamTcpSession.cs" />
+    <Compile Include="SuperSocket\ClientEngine\TcpClientSession.cs" />
+    <Compile Include="System\Buffers\ArrayMemoryPool.cs" />
+    <Compile Include="System\Buffers\ArrayPool.cs" />
+    <Compile Include="System\Buffers\ArrayPoolEventSource.cs" />
+    <Compile Include="System\Buffers\Binary\BinaryPrimitives.cs" />
+    <Compile Include="System\Buffers\BuffersExtensions.cs" />
+    <Compile Include="System\Buffers\DefaultArrayPool.cs" />
+    <Compile Include="System\Buffers\IBufferWriter.cs" />
+    <Compile Include="System\Buffers\IMemoryOwner.cs" />
+    <Compile Include="System\Buffers\IPinnable.cs" />
+    <Compile Include="System\Buffers\MemoryHandle.cs" />
+    <Compile Include="System\Buffers\MemoryManager.cs" />
+    <Compile Include="System\Buffers\MemoryPool.cs" />
+    <Compile Include="System\Buffers\OperationStatus.cs" />
+    <Compile Include="System\Buffers\ReadOnlySequence.2.cs" />
+    <Compile Include="System\Buffers\ReadOnlySequence.cs" />
+    <Compile Include="System\Buffers\ReadOnlySequenceDebugView.cs" />
+    <Compile Include="System\Buffers\ReadOnlySequenceSegment.cs" />
+    <Compile Include="System\Buffers\StandardFormat.cs" />
+    <Compile Include="System\Buffers\Text\Base64.cs" />
+    <Compile Include="System\Buffers\Text\FormattingHelpers.cs" />
+    <Compile Include="System\Buffers\Text\ParserHelpers.cs" />
+    <Compile Include="System\Buffers\Text\Utf8Constants.cs" />
+    <Compile Include="System\Buffers\Text\Utf8Formatter.cs" />
+    <Compile Include="System\Buffers\Text\Utf8Parser.cs" />
+    <Compile Include="System\Buffers\Utilities.cs" />
+    <Compile Include="System\DecimalDecCalc.cs" />
+    <Compile Include="System\ExceptionArgument.cs" />
+    <Compile Include="System\Memory.cs" />
+    <Compile Include="System\MemoryDebugView.cs" />
+    <Compile Include="System\MemoryExtensions.cs" />
+    <Compile Include="System\MutableDecimal.cs" />
+    <Compile Include="System\NotImplemented.cs" />
+    <Compile Include="System\NUInt.cs" />
+    <Compile Include="System\Number.cs" />
+    <Compile Include="System\NumberBuffer.cs" />
+    <Compile Include="System\Numerics\Hashing\HashHelpers.cs" />
+    <Compile Include="System\Pinnable.cs" />
+    <Compile Include="System\ReadOnlyMemory.cs" />
+    <Compile Include="System\ReadOnlySpan.cs" />
+    <Compile Include="System\Runtime\CompilerServices\IsByRefLikeAttribute.cs" />
+    <Compile Include="System\Runtime\CompilerServices\IsReadOnlyAttribute.cs" />
+    <Compile Include="System\Runtime\CompilerServices\IsReadOnlyAttribute1.cs" />
+    <Compile Include="System\Runtime\CompilerServices\NullableAttribute.cs" />
+    <Compile Include="System\Runtime\CompilerServices\NullableContextAttribute.cs" />
+    <Compile Include="System\Runtime\CompilerServices\__BlockReflectionAttribute.cs" />
+    <Compile Include="System\Runtime\CompilerServices\__BlockReflectionAttribute1.cs" />
+    <Compile Include="System\Runtime\InteropServices\MemoryMarshal.cs" />
+    <Compile Include="System\Runtime\InteropServices\SequenceMarshal.cs" />
+    <Compile Include="System\SequencePosition.cs" />
+    <Compile Include="System\Span.cs" />
+    <Compile Include="System\SpanDebugView.cs" />
+    <Compile Include="System\SpanHelpers.cs" />
+    <Compile Include="System\SR.cs" />
+    <Compile Include="System\SR1.cs" />
+    <Compile Include="System\ThrowHelper.cs" />
+    <Compile Include="WebSocket4Net\ClosedEventArgs.cs" />
+    <Compile Include="WebSocket4Net\Command\BadRequest.cs" />
+    <Compile Include="WebSocket4Net\Command\Binary.cs" />
+    <Compile Include="WebSocket4Net\Command\Close.cs" />
+    <Compile Include="WebSocket4Net\Command\Handshake.cs" />
+    <Compile Include="WebSocket4Net\Command\Ping.cs" />
+    <Compile Include="WebSocket4Net\Command\Pong.cs" />
+    <Compile Include="WebSocket4Net\Command\Text.cs" />
+    <Compile Include="WebSocket4Net\Command\WebSocketCommandBase.cs" />
+    <Compile Include="WebSocket4Net\Common\ArraySegmentEx.cs" />
+    <Compile Include="WebSocket4Net\Common\ArraySegmentList.2.cs" />
+    <Compile Include="WebSocket4Net\Common\ArraySegmentList.cs" />
+    <Compile Include="WebSocket4Net\Common\BinaryCommandInfo.cs" />
+    <Compile Include="WebSocket4Net\Common\CommandDelegate.cs" />
+    <Compile Include="WebSocket4Net\Common\CommandInfo.cs" />
+    <Compile Include="WebSocket4Net\Common\DelegateCommand.cs" />
+    <Compile Include="WebSocket4Net\Common\IClientCommandReader.cs" />
+    <Compile Include="WebSocket4Net\Common\ICommand.2.cs" />
+    <Compile Include="WebSocket4Net\Common\ICommand.cs" />
+    <Compile Include="WebSocket4Net\Common\ICommandInfo.2.cs" />
+    <Compile Include="WebSocket4Net\Common\ICommandInfo.cs" />
+    <Compile Include="WebSocket4Net\Common\StringCommandInfo.cs" />
+    <Compile Include="WebSocket4Net\DataReceivedEventArgs.cs" />
+    <Compile Include="WebSocket4Net\Extensions.cs" />
+    <Compile Include="WebSocket4Net\IJsonExecutor.cs" />
+    <Compile Include="WebSocket4Net\JsonExecutor.cs" />
+    <Compile Include="WebSocket4Net\JsonExecutorBase.cs" />
+    <Compile Include="WebSocket4Net\JsonExecutorFull.cs" />
+    <Compile Include="WebSocket4Net\JsonExecutorWithSender.cs" />
+    <Compile Include="WebSocket4Net\JsonExecutorWithSenderAndState.cs" />
+    <Compile Include="WebSocket4Net\JsonExecutorWithToken.cs" />
+    <Compile Include="WebSocket4Net\JsonWebSocket.cs" />
+    <Compile Include="WebSocket4Net\MessageReceivedEventArgs.cs" />
+    <Compile Include="WebSocket4Net\OpCode.cs" />
+    <Compile Include="WebSocket4Net\Protocol\CloseStatusCodeHybi10.cs" />
+    <Compile Include="WebSocket4Net\Protocol\CloseStatusCodeRfc6455.cs" />
+    <Compile Include="WebSocket4Net\Protocol\DraftHybi00DataReader.cs" />
+    <Compile Include="WebSocket4Net\Protocol\DraftHybi00HandshakeReader.cs" />
+    <Compile Include="WebSocket4Net\Protocol\DraftHybi00Processor.cs" />
+    <Compile Include="WebSocket4Net\Protocol\DraftHybi10DataReader.cs" />
+    <Compile Include="WebSocket4Net\Protocol\DraftHybi10HandshakeReader.cs" />
+    <Compile Include="WebSocket4Net\Protocol\DraftHybi10Processor.cs" />
+    <Compile Include="WebSocket4Net\Protocol\FramePartReader\DataFramePartReader.cs" />
+    <Compile Include="WebSocket4Net\Protocol\FramePartReader\ExtendedLenghtReader.cs" />
+    <Compile Include="WebSocket4Net\Protocol\FramePartReader\FixPartReader.cs" />
+    <Compile Include="WebSocket4Net\Protocol\FramePartReader\IDataFramePartReader.cs" />
+    <Compile Include="WebSocket4Net\Protocol\FramePartReader\MaskKeyReader.cs" />
+    <Compile Include="WebSocket4Net\Protocol\FramePartReader\PayloadDataReader.cs" />
+    <Compile Include="WebSocket4Net\Protocol\HandshakeReader.cs" />
+    <Compile Include="WebSocket4Net\Protocol\ICloseStatusCode.cs" />
+    <Compile Include="WebSocket4Net\Protocol\IProtocolProcessor.cs" />
+    <Compile Include="WebSocket4Net\Protocol\ProtocolProcessorBase.cs" />
+    <Compile Include="WebSocket4Net\Protocol\ProtocolProcessorFactory.cs" />
+    <Compile Include="WebSocket4Net\Protocol\ReaderBase.cs" />
+    <Compile Include="WebSocket4Net\Protocol\Rfc6455Processor.cs" />
+    <Compile Include="WebSocket4Net\Protocol\WebSocketDataFrame.cs" />
+    <Compile Include="WebSocket4Net\WebSocket.cs" />
+    <Compile Include="WebSocket4Net\WebSocketCommandInfo.cs" />
+    <Compile Include="WebSocket4Net\WebSocketContext.cs" />
+    <Compile Include="WebSocket4Net\WebSocketState.cs" />
+    <Compile Include="WebSocket4Net\WebSocketStateConst.cs" />
+    <Compile Include="WebSocket4Net\WebSocketVersion.cs" />
+    <Compile Include="WebSocketSharp\ByteOrder.cs" />
+    <Compile Include="WebSocketSharp\CloseEventArgs.cs" />
+    <Compile Include="WebSocketSharp\CloseStatusCode.cs" />
+    <Compile Include="WebSocketSharp\CompressionMethod.cs" />
+    <Compile Include="WebSocketSharp\ErrorEventArgs.cs" />
+    <Compile Include="WebSocketSharp\Ext.cs" />
+    <Compile Include="WebSocketSharp\Fin.cs" />
+    <Compile Include="WebSocketSharp\HttpBase.cs" />
+    <Compile Include="WebSocketSharp\HttpRequest.cs" />
+    <Compile Include="WebSocketSharp\HttpResponse.cs" />
+    <Compile Include="WebSocketSharp\LogData.cs" />
+    <Compile Include="WebSocketSharp\Logger.cs" />
+    <Compile Include="WebSocketSharp\LogLevel.cs" />
+    <Compile Include="WebSocketSharp\Mask.cs" />
+    <Compile Include="WebSocketSharp\MessageEventArgs.cs" />
+    <Compile Include="WebSocketSharp\Net\AuthenticationBase.cs" />
+    <Compile Include="WebSocketSharp\Net\AuthenticationChallenge.cs" />
+    <Compile Include="WebSocketSharp\Net\AuthenticationResponse.cs" />
+    <Compile Include="WebSocketSharp\Net\AuthenticationSchemes.cs" />
+    <Compile Include="WebSocketSharp\Net\Chunk.cs" />
+    <Compile Include="WebSocketSharp\Net\ChunkedRequestStream.cs" />
+    <Compile Include="WebSocketSharp\Net\ChunkStream.cs" />
+    <Compile Include="WebSocketSharp\Net\ClientSslConfiguration.cs" />
+    <Compile Include="WebSocketSharp\Net\Cookie.cs" />
+    <Compile Include="WebSocketSharp\Net\CookieCollection.cs" />
+    <Compile Include="WebSocketSharp\Net\CookieException.cs" />
+    <Compile Include="WebSocketSharp\Net\EndPointListener.cs" />
+    <Compile Include="WebSocketSharp\Net\EndPointManager.cs" />
+    <Compile Include="WebSocketSharp\Net\HttpBasicIdentity.cs" />
+    <Compile Include="WebSocketSharp\Net\HttpConnection.cs" />
+    <Compile Include="WebSocketSharp\Net\HttpDigestIdentity.cs" />
+    <Compile Include="WebSocketSharp\Net\HttpHeaderInfo.cs" />
+    <Compile Include="WebSocketSharp\Net\HttpHeaderType.cs" />
+    <Compile Include="WebSocketSharp\Net\HttpListener.cs" />
+    <Compile Include="WebSocketSharp\Net\HttpListenerAsyncResult.cs" />
+    <Compile Include="WebSocketSharp\Net\HttpListenerContext.cs" />
+    <Compile Include="WebSocketSharp\Net\HttpListenerException.cs" />
+    <Compile Include="WebSocketSharp\Net\HttpListenerPrefix.cs" />
+    <Compile Include="WebSocketSharp\Net\HttpListenerPrefixCollection.cs" />
+    <Compile Include="WebSocketSharp\Net\HttpListenerRequest.cs" />
+    <Compile Include="WebSocketSharp\Net\HttpListenerResponse.cs" />
+    <Compile Include="WebSocketSharp\Net\HttpRequestHeader.cs" />
+    <Compile Include="WebSocketSharp\Net\HttpResponseHeader.cs" />
+    <Compile Include="WebSocketSharp\Net\HttpStatusCode.cs" />
+    <Compile Include="WebSocketSharp\Net\HttpStreamAsyncResult.cs" />
+    <Compile Include="WebSocketSharp\Net\HttpUtility.cs" />
+    <Compile Include="WebSocketSharp\Net\HttpVersion.cs" />
+    <Compile Include="WebSocketSharp\Net\InputChunkState.cs" />
+    <Compile Include="WebSocketSharp\Net\InputState.cs" />
+    <Compile Include="WebSocketSharp\Net\LineState.cs" />
+    <Compile Include="WebSocketSharp\Net\NetworkCredential.cs" />
+    <Compile Include="WebSocketSharp\Net\QueryStringCollection.cs" />
+    <Compile Include="WebSocketSharp\Net\ReadBufferState.cs" />
+    <Compile Include="WebSocketSharp\Net\RequestStream.cs" />
+    <Compile Include="WebSocketSharp\Net\ResponseStream.cs" />
+    <Compile Include="WebSocketSharp\Net\ServerSslConfiguration.cs" />
+    <Compile Include="WebSocketSharp\Net\WebHeaderCollection.cs" />
+    <Compile Include="WebSocketSharp\Net\WebSockets\HttpListenerWebSocketContext.cs" />
+    <Compile Include="WebSocketSharp\Net\WebSockets\TcpListenerWebSocketContext.cs" />
+    <Compile Include="WebSocketSharp\Net\WebSockets\WebSocketContext.cs" />
+    <Compile Include="WebSocketSharp\Opcode.cs" />
+    <Compile Include="WebSocketSharp\PayloadData.cs" />
+    <Compile Include="WebSocketSharp\Rsv.cs" />
+    <Compile Include="WebSocketSharp\Server\HttpRequestEventArgs.cs" />
+    <Compile Include="WebSocketSharp\Server\HttpServer.cs" />
+    <Compile Include="WebSocketSharp\Server\IWebSocketSession.cs" />
+    <Compile Include="WebSocketSharp\Server\ServerState.cs" />
+    <Compile Include="WebSocketSharp\Server\WebSocketBehavior.cs" />
+    <Compile Include="WebSocketSharp\Server\WebSocketServer.cs" />
+    <Compile Include="WebSocketSharp\Server\WebSocketServiceHost.2.cs" />
+    <Compile Include="WebSocketSharp\Server\WebSocketServiceHost.cs" />
+    <Compile Include="WebSocketSharp\Server\WebSocketServiceManager.cs" />
+    <Compile Include="WebSocketSharp\Server\WebSocketSessionManager.cs" />
+    <Compile Include="WebSocketSharp\WebSocket.cs" />
+    <Compile Include="WebSocketSharp\WebSocketException.cs" />
+    <Compile Include="WebSocketSharp\WebSocketFrame.cs" />
+    <Compile Include="WebSocketSharp\WebSocketState.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="BrightIdeasSoftware\ColumnSelectionForm.resources" />
+    <EmbeddedResource Include="BrightIdeasSoftware\Properties\Resources.resources" />
+    <EmbeddedResource Include="FxResources\System\Buffers\SR.resources" />
+    <EmbeddedResource Include="FxResources\System\Memory\SR.resources" />
+    <EmbeddedResource Include="ns10\Form0.resources" />
+    <EmbeddedResource Include="ns16\Class234.resources" />
+    <EmbeddedResource Include="ns16\Form2.resources" />
+    <EmbeddedResource Include="ns18\Class236.resources" />
+    <EmbeddedResource Include="ns18\Form3.resources" />
+    <EmbeddedResource Include="ns19\Form4.resources" />
+    <EmbeddedResource Include="ns20\Class230.resources" />
+    <EmbeddedResource Include="ns21\Class218.resources" />
+    <EmbeddedResource Include="ns22\Class217.resources" />
+    <EmbeddedResource Include="ns24\Class228.resources" />
+    <EmbeddedResource Include="ns24\Class233.resources" />
+    <EmbeddedResource Include="ns29\Class224.resources" />
+    <EmbeddedResource Include="ns29\Class237.resources" />
+    <EmbeddedResource Include="ns2\Form1.resources" />
+    <EmbeddedResource Include="ns31\Class229.resources" />
+    <EmbeddedResource Include="ns33\Class231.resources" />
+    <EmbeddedResource Include="ns34\Class235.resources" />
+    <EmbeddedResource Include="ns35\Class223.resources" />
+    <EmbeddedResource Include="ns36\Class219.resources" />
+    <EmbeddedResource Include="ns36\Class238.resources" />
+    <EmbeddedResource Include="ns37\Class220.resources" />
+    <EmbeddedResource Include="ns38\Class225.resources" />
+    <EmbeddedResource Include="ns3\Class221.resources" />
+    <EmbeddedResource Include="ns3\Class222.resources" />
+    <EmbeddedResource Include="ns4\Class232.resources" />
+    <EmbeddedResource Include="ns5\Class226.resources" />
+    <EmbeddedResource Include="ns6\Form5.resources" />
+    <EmbeddedResource Include="ns8\Class227.resources" />
+    <EmbeddedResource Include="PoEv2\BuyingForms\BulkBuyForm.resources" />
+    <EmbeddedResource Include="PoEv2\BuyingForms\ItemBuyForm.resources" />
+    <EmbeddedResource Include="PoEv2\BuyingForms\LiveSearchBuyForm.resources" />
+    <EmbeddedResource Include="PoEv2\DebugPanel.resources" />
+    <EmbeddedResource Include="PoEv2\ExchangePairForm.resources" />
+    <EmbeddedResource Include="PoEv2\FlippingForm.resources" />
+    <EmbeddedResource Include="PoEv2\MainForm.resources" />
+    <EmbeddedResource Include="PoEv2\Resources\notifications.txt" />
+    <EmbeddedResource Include="{75f0fe8c-cdec-4253-986c-5a5173a18a34}" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.manifest" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
